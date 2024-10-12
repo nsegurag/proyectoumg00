@@ -8,7 +8,7 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.factura</groupId>
+	<groupId>com.producto</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
@@ -59,11 +59,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-		<dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-openfeign</artifactId>
-        <version>3.0.3</version>
-		</dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -76,19 +71,8 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+        
 
-
-
-        <dependency>
-        	<groupId>com.cliente</groupId>
-        	<artifactId>demo</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-        	<groupId>com.producto</groupId>
-        	<artifactId>demo</artifactId>
-        	<version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <build>

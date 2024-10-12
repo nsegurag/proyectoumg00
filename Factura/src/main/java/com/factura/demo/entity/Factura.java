@@ -1,11 +1,9 @@
 package com.factura.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.cliente.demo.entity.Cliente;
+import com.producto.demo.entity.Producto;
+
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -17,6 +15,12 @@ public class Factura {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+
+    @Transient
+    private Cliente cliente;  // Usamos Transient si no quieres persistir este campo en la base de datos
+
+    @Transient
+    private Producto producto;  // Lo mismo aquí para Producto
 
     @Column(name = "cliente_id")
     private int clienteId;
@@ -33,4 +37,14 @@ public class Factura {
     @Column(name = "total")
     private Double total;
 
+    // Setters para Cliente y Producto
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+        this.clienteId = cliente.getId();  // Opcional, si quieres almacenar el ID
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+        this.productoId = producto.getId();  // Opcional, si quieres almacenar el ID
+    }
 }
